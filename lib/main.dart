@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'home.dart';
+import 'screens/home.dart';
 
 void main() => runApp(MaterialApp(
-  home: AttendanceChecker(),
-));
+      home: AttendanceChecker(),
+    ));
 
 class AttendanceChecker extends StatefulWidget {
   @override
@@ -13,14 +13,14 @@ class AttendanceChecker extends StatefulWidget {
 
 class _AttendanceCheckerState extends State<AttendanceChecker> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)
-      => Home()));
-    }
-    );
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Home()));
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,16 +32,18 @@ class _AttendanceCheckerState extends State<AttendanceChecker> {
               Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.fromLTRB(0, 120, 0, 0),
-                  child: Image.asset('assets/ACtick.png', height: 250, width:
-                  250,)
-              ),
+                  child: Image.asset(
+                    'assets/ACtick.png',
+                    height: 250,
+                    width: 250,
+                  )),
               Container(
                 alignment: Alignment.center,
                 padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
-                child: Text('Attendance Checker', style: TextStyle
-                  (fontSize:
-                60, color: Colors.white), textAlign: TextAlign.center,
-
+                child: Text(
+                  'Attendance Checker',
+                  style: TextStyle(fontSize: 60, color: Colors.white),
+                  textAlign: TextAlign.center,
                 ),
               )
             ],
